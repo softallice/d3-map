@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#container {
+    width: 700px;
+    min-height: 700px;
+    float: left;
+    margin: 15px 35px;
+    fill: none;
+    /* fill: #fff; */
+}
+#states path {
+    fill : url('#imgpattern');
+    stroke: #000000;
+    stroke-width: 1.5px;
+}
+/* fill="url(#imgpattern)" */
+#states path:hover {
+    fill: #009300;
+}
+
+#states .active {
+    fill: #00b700;
+    
+}
+
+#states .activeDetail {
+    fill: #00b700;
+}
+
+#states path {
+    cursor: pointer;
+}
+
+#states text {
+    cursor: pointer;
+    font-size: 12px;
+    fill: #000000;
+}

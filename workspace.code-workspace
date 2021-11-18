@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\d3-add-image"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "d3-add-image"
+	}
+}
