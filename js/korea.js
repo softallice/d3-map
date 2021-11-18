@@ -1,3 +1,5 @@
+var pointInPolygon = '../node_modules/point-in-polygon';
+
 window.onload = function() {
     drawMap('#container');
 };
@@ -94,8 +96,28 @@ function drawMap(target) {
         .attr('width', width + 'px')
         .attr('height', height + 'px');
 
+
+    
+
     //geoJson데이터를 파싱하여 지도그리기
     d3.json('json/korea-sgg.json', function(json) {
+
+        // var polygon =
+        
+        findSigCd(json.features);
+        function findSigCd ( arr ) {
+            for(let i = 0; i < arr.length; i++) {
+                
+                var polygon = arr[i].geometry.coordinates[0];
+
+                console.log(pointInPolygon,([ 37.4386, 126.3786 ], polygon));
+
+                // console.log(arr[i].geometry.coordinates[0]);
+                // console.log(arr[i].properties);
+
+            }
+        }
+        console.log(json) ;
         
         states
             .selectAll('path') //지역 설정
@@ -122,6 +144,8 @@ function drawMap(target) {
                 return d.properties.SIG_KOR_NM;
             });
     });
+
+    
 
     //텍스트 위치 조절 - 하드코딩으로 위치 조절을 했습니다.
     function translateTolabel(d) {
